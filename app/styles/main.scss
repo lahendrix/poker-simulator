@@ -1,0 +1,125 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+#main {
+    min-height: 500px;
+}
+.start-btn {
+    margin-bottom: 10px;
+}
+
+.poker-hand-table {
+    td {
+        text-align: center;
+
+        &.center-vertically {
+            vertical-align: middle;
+        }
+    }
+}
+
+.hand-image {
+    height: 80px;
+    width: 280px;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+}
+
+.count-column {
+    width: 100px;
+}
+
+.highCard {
+    background-image: url("../images/highcard.jpg");
+}
+.onePair{
+    background-image: url("../images/onepair.png");
+}
+.twoPair{
+    background-image: url("../images/twopair.png");
+}
+.threeOfKind{
+    background-image: url("../images/threeofkind.png");
+}
+.straight{
+    background-image: url("../images/straight.png");
+}
+.flush{
+    background-image: url("../images/flush.png");
+}
+.fullHouse{
+    background-image: url("../images/fullhouse.png");
+}
+.fourOfKind{
+    background-image: url("../images/fourofkind.png");
+}
+.straightFlush{
+    background-image: url("../images/straightflush.png");
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+// @media screen and (min-width: 768px) {
+//     .container {
+//         max-width: 730px;
+//     }
+
+//     /* Remove the padding we set earlier */
+//     .header,
+//     .marketing,
+//     .footer {
+//         padding-left: 0;
+//         padding-right: 0;
+//     }
+//     /* Space out the masthead */
+//     .header {
+//         margin-bottom: 30px;
+//     }
+//     /* Remove the bottom border on the jumbotron for visual effect */
+//     .jumbotron {
+//         border-bottom: 0;
+//     }
+// }

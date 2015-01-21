@@ -1,0 +1,175 @@
+<div role="tabpanel">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#simulation" aria-controls="simulation" role="tab" data-toggle="tab" data-tab="simulat">Simulate</a></li>
+        <li role="presentation"><a href="#head-to-head" aria-controls="head-to-head" role="tab" data-toggle="tab" data-tab="head-to-head">Head-to-Head</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="simulation">
+            <span>Simulate 1,000,000 poker hands and see the frequency of each hand.</span>
+            <button class="btn btn-primary start-simulation start-btn pull-right">Start Simulation</button>
+            <table class="panel panel-default table table-hover poker-hand-table">
+                <thead>
+                <tr>
+                  <th>Poker Hand</th>
+                  <th>Number of Occurences</th>
+                  <th>Frequency</th>
+                </tr>
+              </thead>
+                <tbody>
+              <tr>
+                <td>
+                  <div class="hand-image highCard"></div>
+                  <span>High Card</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.highcard%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.highcard / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image onePair"></div>
+                  <span>One Pair</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.onepair%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.onepair / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image twoPair"></div>
+                  <span>Two Pair</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.twopair%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.twopair / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image threeOfKind"></div>
+                  <span>Three of a Kind</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.threeofkind%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.threeofkind / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image straight"></div>
+                  <span>Straight</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.straight%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.straight / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image flush"></div>
+                  <span>Flush</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.flush%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.flush / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image fullHouse"></div>
+                  <span>Full House</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.fullhouse%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.fullhouse / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image fourOfKind"></div>
+                  <span>Four of a Kind</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.fourofkind%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.fourofkind / numHands * 100%>%</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="hand-image straightFlush"></div>
+                  <span>Straight Flush</span>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.straightflush%></div>
+                </td>
+                <td class="center-vertically">
+                  <div class="count-column"><%=counts.straightflush / numHands * 100%>%</div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="head-to-head">
+            <span>Simulate head-to-head poker hands.</span>
+            <button class="btn btn-primary start-head-to-head start-btn pull-right">Start Simulation</button>
+            <table class="panel panel-default table table-hover poker-hand-table">
+                <thead>
+                <tr>
+                  <th>Player 1 Hand</th>
+                  <th>Player 2 Hand</th>
+                </tr>
+              </thead>
+                <tbody>
+              <tr>
+                <td>
+                  <div class="hand-image flush"></div>
+                  <div><%=player1.hand%></div>
+                  <div class="<%=player1.winner?'text-success': 'text-danger'%>"><%=player1.winner? 'Winner': 'Loser'%></div>
+                </td>
+                <td>
+                  <div class="hand-image highCard"></div>
+                  <div><%-player2.hand%></div>
+                  <div class="<%=player2.winner?'text-success': 'text-danger'%>"><%=player2.winner? 'Winner': 'Loser'%></div>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="main-progress-bar-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">
+  <div class="modal-dialog modal-m">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Loading...</h3>
+      </div>
+      <div class="modal-body">
+        <div class="progress progress-striped active" style="margin-bottom:0;">
+          <div class="progress-bar" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
