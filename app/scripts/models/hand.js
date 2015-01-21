@@ -55,7 +55,7 @@ define([
                 handType = "straight";
             }
 
-            if (!straight && this._isFlush()) {
+            if (this._isFlush()) {
                 flush = true;
                 handType = "flush";
             }
@@ -70,7 +70,7 @@ define([
                 handType = "fourofkind";
             }
 
-            if (flush && this._isStraightFlush()) {
+            if (flush && straight) {
                 straightFlush = true;
                 handType = "straightflush";
             }
