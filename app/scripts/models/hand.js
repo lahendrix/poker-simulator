@@ -163,7 +163,9 @@ define([
             // Check for sequential hand
             for (var i = 0; i < numOfCards; i++) {
                 var card = cards[i];
-                if (! card.rank == (startingRank + i) ){
+                var expectedRank = startingRank + i;
+                var hasCorrectRank = card.rank == expectedRank;
+                if (!hasCorrectRank) {
                     isStraight = false;
                     break;
                 }
