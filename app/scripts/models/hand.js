@@ -10,6 +10,7 @@ define([
 
         initialize: function() {
             this._setCardCounts();
+            this._setSuiteCount();
         },
 
         defaults: {

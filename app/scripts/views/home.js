@@ -65,12 +65,11 @@ define([
             };
         },
 
-        _startSimulation: function() {
-            // $("#main-progress-bar-modal").modal("show");
+        _startSimulation: function(e) {
+            $(".start-simulation").hide();
             var cardDeck = this.model.get("cardDeck");
             var counts = this._getCounts();
-            var numHands = 1000;
-
+            var numHands = 10000;
 
             for (var i = 1; i <= numHands; i++) {
                 var pokerHand = cardDeck.dealHand(),
@@ -80,12 +79,11 @@ define([
                 cardDeck.shuffleDeck();
             }
 
-            // $("#main-progress-bar-modal").modal("hide");
-
             this.model.set({
                 counts: counts,
-                numHands: numHands
+                numHands: numHands - counts.highcard // exclude highcard type
             });
+            this.$(".start-simulation").prop("disabled", false);
         },
 
         _startHeadToHead: function() {
@@ -106,6 +104,9 @@ define([
                 player2Hand = cardDeck.dealHand(),
                 player2HandType = player2Hand.getPokerHandType();
 
+            // TODO: Correctly score poker hands that are the same type, but
+            // have different high cards
+
             this.model.set({
                 player1: {
                     hand: player1HandType,
@@ -116,6 +117,8 @@ define([
                     winner: handRanks[player1HandType] >= handRanks[player2HandType]
                 }
             });
+
+            this.model.trigger("change");
 
 
         }

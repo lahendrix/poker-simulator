@@ -8,8 +8,8 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="simulation">
-            <span>Simulate 1,000,000 poker hands and see the frequency of each hand.</span>
-            <button class="btn btn-primary start-simulation start-btn pull-right">Start Simulation</button>
+            <span>Simulate 1,000,000 poker hands and see the frequency of each hand, excluding high card hands.</span>
+            <a class="button btn btn-primary start-simulation start-btn pull-right">Start Simulation</a>
             <table class="panel panel-default table table-hover poker-hand-table">
                 <thead>
                 <tr>
@@ -19,7 +19,7 @@
                 </tr>
               </thead>
                 <tbody>
-              <tr>
+              <!-- <tr>
                 <td>
                   <div class="hand-image highCard"></div>
                   <span>High Card</span>
@@ -30,7 +30,7 @@
                 <td class="center-vertically">
                   <div class="count-column"><%=counts.highcard / numHands * 100%>%</div>
                 </td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>
                   <div class="hand-image onePair"></div>

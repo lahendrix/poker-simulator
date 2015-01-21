@@ -50,8 +50,8 @@ define([
             for (i = 0; i < this.POKER_HAND_SIZE; i++) {
                 var cardData = this.at(cardIndices[i]).toJSON();
                 cards.push(cardData);
+                
             }
-
             // Sort hands
             cards = _.sortBy(cards, "rank");
 
